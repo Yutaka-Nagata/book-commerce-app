@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
+
+//コンポ―ネント
+import Header from "./components/Header"
+
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
   weight: ["400"]
@@ -32,7 +36,10 @@ export default function RootLayout({
       lang="ja"
       className={`${notoSansJP.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header/>
+        {children}
+      </body>
     </html>
   );
 }
