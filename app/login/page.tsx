@@ -1,6 +1,5 @@
 "use client"
 
-
 async function Login(){
     return(
         <div className="flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
