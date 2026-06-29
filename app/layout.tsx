@@ -3,8 +3,11 @@ import { Geist, Geist_Mono, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
 
+
 //コンポ―ネント
 import Header from "./components/Header"
+import NextAuth from "next-auth";
+import { NextAuthProvider } from "./lib/next-auth/provider"
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -37,8 +40,10 @@ export default function RootLayout({
       className={`${notoSansJP.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <NextAuthProvider>
         <Header/>
         {children}
+        </NextAuthProvider>
       </body>
     </html>
   );
